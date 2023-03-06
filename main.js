@@ -16,7 +16,7 @@ for (let i = 0; i < 1; i++) {
   let bimestral = plazoFijo(montoDinero, rendimientoAnual, 6);
   let trimestral = plazoFijo(montoDinero, rendimientoAnual, 4);
   let cuatrimestral = plazoFijo(montoDinero, rendimientoAnual, 3);
-  let bianual = plazoFijo(montoDinero, rendimientoAnual, 2);
+  let semestral = plazoFijo(montoDinero, rendimientoAnual, 2);
   let anual = plazoFijo(montoDinero, rendimientoAnual, 1);
 
   if (opcionTiempo == 1) {
@@ -28,14 +28,15 @@ for (let i = 0; i < 1; i++) {
   } else if (opcionTiempo == 4) {
     alert(`Su rendimiento cuatrimestral será de $${cuatrimestral}.`);
   } else if (opcionTiempo == 5) {
-    alert(`Su rendimiento bianual será de $${bianual}.`);
+    alert(`Su rendimiento semestral será de $${semestral}.`);
   } else if (opcionTiempo == 6) {
     alert(`Su rendimiento anual será de $${anual}.`);
-  } 
+  }
   else {
     alert("Opción no válida. Por favor, actualice la página y elija una nueva opción.");
   }
 }
+
 
 
 
