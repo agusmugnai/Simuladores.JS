@@ -2,19 +2,139 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los Andes | Banco</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/logoBankWhite.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@100;400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.scss">
+  <title>Los Andes | Banco</title>
 </head>
 
 <body>
-    <h1>Banco Los Andes </h1>
-    <h2>-Tu banco de confianza-</h2>
+  <header>
+    <nav class="navBar">
+      <div>
+        <li><a href="index.html"><img src="./assets/img/logoBankName.png" alt="Logo del banco"></a></li>
+      </div>
 
+      <div>
+        <ul class="navBarLink">
+          <li><a href="#"><img src="./assets/img/lupa.png" alt="Lupa"></a></li>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Empresa</a></li>
+          <li><a href="#">Persona</a></li>
+          <li><a href="#">Nosotros</a></li>
+        </ul>
+      </div>
 
-   <!--  <script src="main.js"></script> -->
-   <script src="main2.js"></script>
+      <div>
+        <li>Home Banking</li>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="imgFondo">
+      <h2>¡Abrí tu cuenta 100% online!</h2>
+      <h4>Y disfrutá los mejores beneficios</h4>
+      <li class="btn"><a href="#">¡Ingresá!</a></li>
+    </section>
+
+    <section class="gridCard">
+
+      <div class="card1">
+        <img src="./assets/img/refund.png" alt="Dibujo signo moneda">
+        <h4>Compra de divisas</h4>
+      </div>
+
+      <div class="card2">
+        <img src="./assets/img/credit-card.png" alt="Dibujo de tarjetas de crédito">
+        <h4>Tarjetas</h4>
+      </div>
+
+      <div class="card3">
+        <img src="./assets/img/save-money.png" alt="Dibujo de mano con una moneda">
+        <h4>Inversiones</h4>
+      </div>
+
+      <div class="card4">
+        <img src="./assets/img/accounts.png" alt="Dibujo de calculadora y monedas">
+        <h4>Simulador de plazo fijos</h4>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <img src="./assets/img/woman2.jpeg" alt="Mujer con remera naranja sonriendo">
+        <h2>¿Querés emprender?</h2>
+        <p>Conocé todos los beneficios que tenemos para vos si comenzás a acreditar tus compras con nosotros.</p>
+        <li class="btn"><a href="#">¡Sumate!</a></li>
+      </div>
+
+    </section>
+
+    <section>
+      <h3>Tu banco digital siempre con vos</h3>
+      <div>
+        <img src="./assets/img/mobile-banking.png" alt="Dibujo de una mano y un celular">
+        <a href="#">Banco app</a>
+      </div>
+      <div>
+        <img src="./assets/img/bank.png" alt="Dibujo de un banco">
+        <a href="#">Home banking</a>
+      </div>
+    </section>
+
+    <img src="./assets/img/customer-service.png" alt="Dibujo a color de una persona con micrófono">
+
+    <section>
+      <h2>¿Tenés dudas?</h2>
+      <p>Envianos tu consulta</p>
+      <div>
+        <label for="nombre">
+          <p>Nombre</p>
+          <input type="text" id="nombre" name="nombre" required>
+        </label>
+        <p>e-mail</p>
+        <label for="e-mail">
+          <input type="email" id="e-mail" name="e-mail" required>
+        </label>
+        <p>Tu comentario</p>
+        <label for="comentario">
+          <textarea name="comentario" id="comentario"></textarea>
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="edades" name="mayor25" value="mayor18">
+        <label for="mayor18">Tengo entre 18 y 35</label><br>
+        <input type="checkbox" id="edades" name="mayor35" value="mayor35">
+        <label for="mayor35">Tengo entre 35 y 60</label><br>
+        <input type="checkbox" id="edades" name="mayor60" value="mayor60">
+        <label for="mayor60">Soy mayor de 60</label><br>
+      </div>
+    </section>
+
+    <img src="./assets/img/usuariosFinancieros.jpeg" alt="Imagen sobre la página de usuarios financieros">
+
+  </main>
+  <footer>
+    <section>
+      <ul>
+        <li><a href="#">Aviso legal</a></li>
+        <li><a href="#">Defensa al consumidor</a></li>
+        <li><a href="#">Medios de pago</a></li>
+        <li><a href="#">Información útil</a></li>
+      </ul>
+
+      <p>Banco Andes se reserva todos los derechos.
+        Prohibida la duplicación,
+        distribución o almacenamiento en cualquier medio.</p>
+    </section>
+  </footer>
+  <script src="main.js"></script>
 </body>
 
 </html>
