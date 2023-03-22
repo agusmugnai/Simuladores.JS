@@ -1,0 +1,41 @@
+.navBar {
+    @include flex (flex, wrap, row, space-between, center);
+    background-color: $backGround;
+    height: 90px;
+    width: 100%;
+
+
+    li {
+        padding: 0 10px;
+    }
+
+    a {
+        font-size: 20px;
+        font-family: $principalFont;
+        color: map-get($map: $color, $key: "negro");
+    }
+}
+
+.navBarLink {
+    @include flex (flex, wrap, row, space-between, center);
+
+    li {
+        padding: 10px;
+        margin: 10px;
+    }
+
+}
+
+.icon {
+    height: 32px;
+    width: 32px;
+}
+
+.iconLogo {
+    height: 75px;
+    width: 120px;
+}
+
+.btn {
+    @include btn;
+}
