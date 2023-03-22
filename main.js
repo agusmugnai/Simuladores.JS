@@ -1,4 +1,4 @@
-let bienvenida = alert("Bienvenido/a al Banco Los Andes.");
+let bienvenida = alert("Bienvenido/a al Banco Andes.");
 
 let menuInicio = () => {
     return parseInt(prompt("¿En qué te podemos ayudar?\n1) Clientes\n2) Mi cuenta\n3) Compra de divisas / Plazo fijo\n4) Salir"));
@@ -14,36 +14,40 @@ class Cliente {
 }
 const cliente0 = new Cliente("Roberta", "Mancini", 20202020);
 const cliente1 = new Cliente("Mario", "Viaggio", 50505050);
+const cliente2 = new Cliente("Anselmo", "Rossi", 30303030);
+const cliente3 = new Cliente("Rosa", "Paz", 80808080);
+/* const cliente4 = new Cliente(nombre, apellido, dni); */
 
+const listaClientes = [cliente0, cliente1, cliente2, cliente3];
 
-const listaClientes = [cliente0, cliente1];
-
-for (let nombre of listaClientes){
-    console.log(nombre);
+console.log("Estos son nuestros clientes adheridos:")
+for (let cliente of listaClientes) {
+    console.log(`${cliente.apellido}, ${cliente.nombre}`)
 }
 
 
-let opcionCliente = () => {
-    return parseInt(prompt("1) Alta cliente\n2) Modificación \n3) Baja cliente\n"));
-}
-let salirOperacion = () => {
-    let menuSalirCliente = parseInt(prompt("¿Desea realizar alguna otra operación?\n1) Sí\n2) No"));
-    if (menuSalirCliente === 1) {
-        return menuInicio();
+function opcionCliente() {
+    let op2 = parseInt(prompt("1) Alta cliente\n2) Modificación \n3) Baja cliente\n"));
+    if (op2 === 1) {
+        altaCliente();
+    } else if (op2 === 2) {
+        modificacionCliente();
+    } else if (op2 === 3) {
+        bajaCliente();
     } else {
-        return alert("Gracias por confiar en Banco Los Andes.");
+        alert("Opción incorrecta. Por favor ingrese una opción válida.");
     }
 }
-
 
 function altaCliente() {
     let nombre = prompt("Ingrese el nombre del nuevo cliente.");
     let apellido = prompt("Ingrese el apellido del nuevo cliente.");
     let dni = parseInt(prompt("Ingrese el DNI del nuevo cliente."));
-    let cliente = new Cliente(nombre, apellido, dni)
+    let cliente = new Cliente(nombre, apellido, dni);
     listaClientes.push(cliente);
-    alert(`El cliente ${apellido} ${nombre} se ha dado de alta satisfactoriamente.`)
-    return alert(salirOperacion());
+    alert(`El cliente ${apellido} ${nombre} se ha dado de alta satisfactoriamente.`);
+    console.log(cliente);
+    return salir();
 }
 
 function modificacionCliente() {
@@ -54,8 +58,9 @@ function modificacionCliente() {
     let apellido = prompt("Ingrese el apellido del nuevo cliente.");
     let clienteModificado = new Cliente(nombre, apellido, dni);
     listaClientes.splice(indice, 1, clienteModificado);
-    alert(`El cliente ${apellido} ${nombre} se ha modificado con éxito.`)
-    return alert(salirOperacion());
+    alert(`El cliente ${apellido} ${nombre} se ha modificado con éxito.`);
+    console.log(listaClientes);
+    return salir();
 }
 
 function bajaCliente() {
@@ -63,30 +68,34 @@ function bajaCliente() {
     let cliente = listaClientes.find(cliente => cliente.dni === dni);
     let indice = listaClientes.indexOf(cliente);
     listaClientes.splice(indice, 1);
-    alert(`El cliente ${apellido} ${nombre} se ha dado de baja satisfactoriamente.`)
-    return alert(salirOperacion());
+    alert(`El cliente ${JSON.stringify(cliente)} se ha dado de baja satisfactoriamente.`);
+    console.log(listaClientes);
+    return salir();
 }
 
-
-//-------------------------------------------------------------------
-
- function opcionCuenta() {
+function opcionCuenta() {
     let dni = parseInt(prompt("Ingrese el DNI del cliente: "));
     let clienteBuscado = listaClientes.find(cliente => cliente.dni === dni);
     alert(`El cliente ${JSON.stringify(clienteBuscado)} figura en nuestra base de datos.`);
-    return alert(salirOperacion());
+    return salir();
 }
 
-//-------------------------------------------------------
 
-let dolarHoy = 209.23;
+let dolarHoy = 211.75;
 
 let compraDolar = (valorUno, valorDos) => {
     return valorUno * valorDos;
 }
 
-let opcionDinero = () => {
-    return parseInt(prompt("1) Compra de divisas\n2) Plazo fijo"));
+function opcionDinero() {
+    let menuDinero = parseInt(prompt("1) Compra de divisas\n2) Plazo fijo"));
+    if (menuDinero === 1) {
+        compraDivisas();
+    } else if (menuDinero === 2) {
+        resultadoPlazoFijo();
+    } else {
+        alert("Opción incorrecta. Por favor ingrese una opción válida.");
+    }
 }
 
 
@@ -95,14 +104,14 @@ function compraDivisas() {
     let resultadoDolar = compraDolar(montoPedido, dolarHoy);
     if (montoPedido <= 200) {
         alert(`Se debitarán de su cuenta $${resultadoDolar} pesos argentinos.`);
+        return salir();
     } while (montoPedido > 200) {
-        montoPedido = parseFloat(prompt("Valores inválidos. Por favor indique un monto menor a 200 dólares:"));
-    } if (montoPedido <= 200) {
-        alert(`Se debitarán de su cuenta $${resultadoDolar} pesos argentinos.`);
-    } return alert(salirOperacion());
+        alert("Valores inválidos. Por favor indique un monto menor a 200 dólares:");
+        break;
+    }
 }
 
-let rendimientoAnual = 0.75;
+let rendimientoAnual = 0.78;
 
 let plazoFijo = (valorUno, valorDos, valorTres) => {
     return (valorUno * valorDos) / valorTres;
@@ -134,14 +143,12 @@ function resultadoPlazoFijo() {
         alert(`Su rendimiento anual será de $${anual}`);
     } else {
         alert("Opción no válida.");
-    } return alert(salirOperacion());
+    } return salir();
 }
-//---------------------------------------------------------------------------
-let salir = () => {
-    alert("Gracias por confiar en Banco Los Andes.");
-}
-//-----------------------------------------------------------
 
+let salir = () => {
+    alert("Gracias por confiar en Banco Andes.");
+}
 
 let opcion1 = menuInicio();
 switch (opcion1) {
@@ -159,31 +166,4 @@ switch (opcion1) {
         break;
     default:
         alert("Opción incorrecta. Por favor ingrese una opción válida.");
-}
-
-let opcion2 = opcionCliente();
-switch (opcion2) {
-    case 1:
-        altaCliente();
-        break;
-    case 2:
-        modificacionCliente();
-        break;
-    case 3:
-        bajaCliente();
-        break;
-    default:
-        alert("Opción incorrecta. Por favor ingrese una opción válida.");
-}
-
-let opcion3 = opcionDinero();
-switch (opcion3) {
-    case 1:
-        compraDivisas();
-        break;
-    case 2:
-        resultadoPlazoFijo();
-        break;
-    default:
-        alert("Opción incorrecta. Por favor ingrese una opción válida.");
-}  
+} 

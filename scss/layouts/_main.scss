@@ -1,5 +1,5 @@
 .imgFondo {
-    background-image: url(../assets/img/building3.jpg);
+    background-image: url(../assets/img/building.jpg);
     width: 100%;
     height: 400px;
     background-size: cover;
@@ -78,6 +78,7 @@
 
 .card3 {
     grid-area: card3;
+    column-gap: 20px;
     @extend .card1;
 }
 
